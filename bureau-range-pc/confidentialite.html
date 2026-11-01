@@ -79,14 +79,14 @@ code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); bo
 
 <div class="cadre">
   <div class="onglets" role="tablist" aria-label="Langue / Language / Idioma" hidden>
-    <button role="tab" id="t-fr" aria-controls="fr" aria-selected="true">Français</button>
-    <button role="tab" id="t-en" aria-controls="en" aria-selected="false">English</button>
-    <button role="tab" id="t-es" aria-controls="es" aria-selected="false">Español</button>
+    <button role="tab" id="t-fr" aria-controls="p-fr" aria-selected="true">Français</button>
+    <button role="tab" id="t-en" aria-controls="p-en" aria-selected="false">English</button>
+    <button role="tab" id="t-es" aria-controls="p-es" aria-selected="false">Español</button>
   </div>
 
   <main class="feuille">
     <!-- ================= FRANÇAIS ================= -->
-    <article id="fr" lang="fr" role="tabpanel" aria-labelledby="t-fr">
+    <article id="p-fr" lang="fr" role="tabpanel" aria-labelledby="t-fr">
       <span class="etiquette">Politique de confidentialité</span>
       <header style="display:grid;gap:.5rem">
         <h1>Bureau Rangé PC</h1>
@@ -137,7 +137,7 @@ code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); bo
     </article>
 
     <!-- ================= ENGLISH ================= -->
-    <article id="en" lang="en" role="tabpanel" aria-labelledby="t-en">
+    <article id="p-en" lang="en" role="tabpanel" aria-labelledby="t-en">
       <span class="etiquette">Privacy policy</span>
       <header style="display:grid;gap:.5rem">
         <h1>Bureau Rangé PC</h1>
@@ -188,7 +188,7 @@ code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); bo
     </article>
 
     <!-- ================= ESPAÑOL ================= -->
-    <article id="es" lang="es" role="tabpanel" aria-labelledby="t-es">
+    <article id="p-es" lang="es" role="tabpanel" aria-labelledby="t-es">
       <span class="etiquette">Política de privacidad</span>
       <header style="display:grid;gap:.5rem">
         <h1>Bureau Rangé PC</h1>
@@ -250,7 +250,7 @@ code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); bo
 
   function montrer(code) {
     langues.forEach(function (l) {
-      document.getElementById(l).hidden = l !== code;
+      document.getElementById("p-" + l).hidden = l !== code;
       document.getElementById("t-" + l).setAttribute("aria-selected", l === code ? "true" : "false");
     });
   }
@@ -261,9 +261,17 @@ code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); bo
     depart = langues.indexOf(nav) >= 0 ? nav : "en";
   }
   montrer(depart);
+  window.scrollTo(0, 0);
+  window.addEventListener("hashchange", function () {
+    var h = location.hash.replace("#", "");
+    if (langues.indexOf(h) >= 0) montrer(h);
+  });
 
   langues.forEach(function (l) {
-    document.getElementById("t-" + l).addEventListener("click", function () { montrer(l); });
+    document.getElementById("t-" + l).addEventListener("click", function () {
+      try { history.replaceState(null, "", "#" + l); } catch (e) {}
+      montrer(l);
+    });
   });
 })();
 </script>
