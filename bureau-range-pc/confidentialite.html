@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Confidentialité Bureau Rangé PC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Public+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: a single reading column, like a printed policy sheet tucked in a manila folder, with one tab per language */
+:root {
+  --bg: #f6f6f4;
+  --sheet: #ffffff;
+  --ink: #23262b;
+  --muted: #5d6168;
+  --line: #dcdcd6;
+  --folder: #9a6d1c;
+  --folder-soft: #f3e7cf;
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17181a; --sheet: #1f2023; --ink: #e8e6e1; --muted: #a5a39d;
+    --line: #34353a; --folder: #d9a548; --folder-soft: #3a2f1c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17181a; --sheet: #1f2023; --ink: #e8e6e1; --muted: #a5a39d;
+  --line: #34353a; --folder: #d9a548; --folder-soft: #3a2f1c; color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1rem; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2.5rem 3rem;
+}
+.cadre { max-width: 44rem; margin: 0 auto; display: grid; }
+.onglets { display: flex; gap: .25rem; flex-wrap: wrap; padding-left: 1rem; }
+.onglets button {
+  font: 600 .85rem/1 var(--body); letter-spacing: .04em;
+  color: var(--muted); background: var(--bg);
+  border: 1px solid var(--line); border-bottom: 0; border-radius: 6px 6px 0 0;
+  padding: .6rem 1rem; cursor: pointer;
+}
+.onglets button[aria-selected="true"] { background: var(--sheet); color: var(--folder); position: relative; top: 1px; }
+.onglets button:focus-visible { outline: 2px solid var(--folder); outline-offset: 2px; }
+.feuille {
+  background: var(--sheet); border: 1px solid var(--line); border-radius: 6px;
+  padding: clamp(1.25rem, 4vw, 2.75rem);
+}
+article { display: grid; gap: 1.75rem; }
+article + article { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--line); }
+.js article + article { margin-top: 0; padding-top: 0; border-top: 0; }
+.etiquette {
+  display: inline-block; justify-self: start;
+  background: var(--folder-soft); color: var(--folder);
+  font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  padding: .3rem .75rem; border-radius: 4px;
+}
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 650; line-height: 1.15; }
+h2 { font-size: 1.2rem; font-weight: 650; }
+p, ul { margin: 0; max-width: 65ch; }
+ul { padding-left: 1.2rem; display: grid; gap: .35rem; }
+section { display: grid; gap: .6rem; }
+.date { color: var(--muted); font-size: .92rem; }
+.resume { border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.25rem; background: var(--bg); }
+.resume strong { color: var(--folder); }
+a { color: var(--folder); }
+code { font-size: .9em; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .35rem; word-break: break-word; }
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="cadre">
+  <div class="onglets" role="tablist" aria-label="Langue / Language / Idioma" hidden>
+    <button role="tab" id="t-fr" aria-controls="fr" aria-selected="true">Français</button>
+    <button role="tab" id="t-en" aria-controls="en" aria-selected="false">English</button>
+    <button role="tab" id="t-es" aria-controls="es" aria-selected="false">Español</button>
+  </div>
+
+  <main class="feuille">
+    <!-- ================= FRANÇAIS ================= -->
+    <article id="fr" lang="fr" role="tabpanel" aria-labelledby="t-fr">
+      <span class="etiquette">Politique de confidentialité</span>
+      <header style="display:grid;gap:.5rem">
+        <h1>Bureau Rangé PC</h1>
+        <p class="date">En vigueur le 31 octobre 2026</p>
+      </header>
+      <div class="resume"><p><strong>En bref :</strong> Bureau Rangé PC ne recueille, ne transmet et ne vend aucune donnée personnelle. Tout ce que vous rangez reste dans vos Documents, sur votre ordinateur.</p></div>
+      <section>
+        <h2>Ce que l'application conserve</h2>
+        <p>Pour afficher vos tiroirs, l'application enregistre :</p>
+        <ul>
+          <li>le nom de vos tiroirs et l'ordre de vos icônes;</li>
+          <li>l'emplacement des fichiers, dossiers et raccourcis que vous y avez glissés;</li>
+          <li>les raccourcis (.lnk, .url) retirés de votre bureau, ou une copie de ceux glissés depuis ailleurs;</li>
+          <li>le nom de l'ordinateur où chaque icône a été rangée, pour vous dire sur quel ordinateur elle fonctionne;</li>
+          <li>la position de la fenêtre et vos réglages (langue, démarrage avec Windows).</li>
+        </ul>
+        <p>Tout est rangé dans un seul dossier, <code>Documents\Bureau Rangé PC</code>. L'application elle-même n'envoie jamais ces renseignements ailleurs.</p>
+        <p>À chaque démarrage, une copie de sauvegarde de vos tiroirs est placée dans ce même dossier. Les 10 dernières versions sont gardées et les plus anciennes sont effacées automatiquement.</p>
+        <p><strong>OneDrive :</strong> si vous avez choisi de synchroniser vos Documents avec Microsoft OneDrive, ce dossier est synchronisé comme le reste de vos Documents, selon vos réglages OneDrive. C'est ce qui permet de retrouver les mêmes tiroirs sur vos autres ordinateurs. L'application ne se connecte pas à OneDrive : c'est Windows qui s'en occupe.</p>
+      </section>
+      <section>
+        <h2>Ce que l'application ne fait pas</h2>
+        <ul>
+          <li>Aucune connexion Internet n'est utilisée.</li>
+          <li>Aucun compte, aucune inscription.</li>
+          <li>Aucune statistique d'utilisation, aucun traceur, aucune publicité.</li>
+          <li>Aucun renseignement n'est partagé avec des tiers.</li>
+          <li>L'application n'ouvre pas et ne lit pas le contenu de vos fichiers : elle conserve seulement leur emplacement pour les lancer quand vous cliquez dessus.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Vos fichiers</h2>
+        <p>Quand vous glissez une icône depuis le bureau, un raccourci est déplacé dans <code>Documents\Bureau Rangé PC\Raccourcis</code>. Un vrai fichier ou dossier n'est jamais supprimé : après votre confirmation, il est déplacé dans <code>Documents\Bureau Rangé PC\Fichiers</code>. Rien ne passe par la Corbeille. Retirer une icône du classeur la remet sur votre bureau.</p>
+      </section>
+      <section>
+        <h2>Supprimer vos données</h2>
+        <p>Désinstallez l'application depuis les Paramètres de Windows. Pour effacer aussi vos tiroirs et leurs sauvegardes, supprimez le dossier <code>Documents\Bureau Rangé PC</code>, après avoir remis sur votre bureau les icônes et fichiers que vous voulez garder.</p>
+      </section>
+      <section>
+        <h2>Enfants</h2>
+        <p>L'application ne recueille aucun renseignement, y compris auprès des enfants.</p>
+      </section>
+      <section>
+        <h2>Modifications et questions</h2>
+        <p>Si cette politique change, la nouvelle version sera publiée sur cette page avec sa date d'entrée en vigueur. Pour toute question, écrivez à <code>microappschoix@hotmail.com</code>.</p>
+        <p>Bureau Rangé PC est une application Maillon, développée au Québec.<br><a href="index.html#fr">← Retour à Bureau Rangé PC</a></p>
+      </section>
+    </article>
+
+    <!-- ================= ENGLISH ================= -->
+    <article id="en" lang="en" role="tabpanel" aria-labelledby="t-en">
+      <span class="etiquette">Privacy policy</span>
+      <header style="display:grid;gap:.5rem">
+        <h1>Bureau Rangé PC</h1>
+        <p class="date">Effective October 31, 2026</p>
+      </header>
+      <div class="resume"><p><strong>In short:</strong> Bureau Rangé PC does not collect, transmit or sell any personal data. Everything you store stays in your Documents, on your computer.</p></div>
+      <section>
+        <h2>What the app stores</h2>
+        <p>To display your drawers, the app saves:</p>
+        <ul>
+          <li>the names of your drawers and the order of your icons;</li>
+          <li>the location of the files, folders and shortcuts you dragged into them;</li>
+          <li>the shortcuts (.lnk, .url) removed from your desktop, or a copy of those dragged from elsewhere;</li>
+          <li>the name of the computer where each icon was added, to tell you which computer it works on;</li>
+          <li>the window position and your settings (language, start with Windows).</li>
+        </ul>
+        <p>Everything is stored in a single folder, <code>Documents\Bureau Rangé PC</code>. The app itself never sends this information anywhere.</p>
+        <p>Each time it starts, a backup copy of your drawers is saved in the same folder. The last 10 versions are kept and older ones are deleted automatically.</p>
+        <p><strong>OneDrive:</strong> if you chose to sync your Documents with Microsoft OneDrive, this folder is synced like the rest of your Documents, under your OneDrive settings. This is what lets you find the same drawers on your other computers. The app does not connect to OneDrive: Windows takes care of it.</p>
+      </section>
+      <section>
+        <h2>What the app does not do</h2>
+        <ul>
+          <li>No Internet connection is used.</li>
+          <li>No account, no sign-up.</li>
+          <li>No usage statistics, no tracking, no advertising.</li>
+          <li>No information is shared with third parties.</li>
+          <li>The app does not open or read the content of your files: it only keeps their location so it can open them when you click.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Your files</h2>
+        <p>When you drag an icon from the desktop, a shortcut is moved to <code>Documents\Bureau Rangé PC\Raccourcis</code>. A real file or folder is never deleted: after you confirm, it is moved to <code>Documents\Bureau Rangé PC\Fichiers</code>. Nothing goes to the Recycle Bin. Removing an icon from the organizer puts it back on your desktop.</p>
+      </section>
+      <section>
+        <h2>Deleting your data</h2>
+        <p>Uninstall the app from Windows Settings. To also delete your drawers and their backups, delete the <code>Documents\Bureau Rangé PC</code> folder, after putting back on your desktop the icons and files you want to keep.</p>
+      </section>
+      <section>
+        <h2>Children</h2>
+        <p>The app does not collect any information, including from children.</p>
+      </section>
+      <section>
+        <h2>Changes and questions</h2>
+        <p>If this policy changes, the new version will be posted on this page with its effective date. For any question, write to <code>microappschoix@hotmail.com</code>.</p>
+        <p>Bureau Rangé PC is a Maillon app, developed in Quebec.<br><a href="index.html#en">← Back to Bureau Rangé PC</a></p>
+      </section>
+    </article>
+
+    <!-- ================= ESPAÑOL ================= -->
+    <article id="es" lang="es" role="tabpanel" aria-labelledby="t-es">
+      <span class="etiquette">Política de privacidad</span>
+      <header style="display:grid;gap:.5rem">
+        <h1>Bureau Rangé PC</h1>
+        <p class="date">Vigente desde el 31 de octubre de 2026</p>
+      </header>
+      <div class="resume"><p><strong>En resumen:</strong> Bureau Rangé PC no recopila, no transmite y no vende ningún dato personal. Todo lo que guarda se queda en sus Documentos, en su equipo.</p></div>
+      <section>
+        <h2>Lo que guarda la aplicación</h2>
+        <p>Para mostrar sus cajones, la aplicación guarda:</p>
+        <ul>
+          <li>el nombre de sus cajones y el orden de sus iconos;</li>
+          <li>la ubicación de los archivos, carpetas y accesos directos que arrastró a ellos;</li>
+          <li>los accesos directos (.lnk, .url) quitados de su escritorio, o una copia de los arrastrados desde otro lugar;</li>
+          <li>el nombre del equipo donde se guardó cada icono, para indicarle en qué equipo funciona;</li>
+          <li>la posición de la ventana y su configuración (idioma, inicio con Windows).</li>
+        </ul>
+        <p>Todo se guarda en una sola carpeta, <code>Documentos\Bureau Rangé PC</code>. La aplicación nunca envía esta información a ninguna parte.</p>
+        <p>Cada vez que se inicia, se guarda una copia de seguridad de sus cajones en esa misma carpeta. Se conservan las 10 últimas versiones y las más antiguas se eliminan automáticamente.</p>
+        <p><strong>OneDrive:</strong> si eligió sincronizar sus Documentos con Microsoft OneDrive, esta carpeta se sincroniza como el resto de sus Documentos, según su configuración de OneDrive. Esto le permite encontrar los mismos cajones en sus otros equipos. La aplicación no se conecta a OneDrive: Windows se encarga de ello.</p>
+      </section>
+      <section>
+        <h2>Lo que la aplicación no hace</h2>
+        <ul>
+          <li>No usa ninguna conexión a Internet.</li>
+          <li>Sin cuenta, sin registro.</li>
+          <li>Sin estadísticas de uso, sin seguimiento, sin publicidad.</li>
+          <li>No se comparte ninguna información con terceros.</li>
+          <li>La aplicación no abre ni lee el contenido de sus archivos: solo conserva su ubicación para abrirlos cuando usted hace clic.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Sus archivos</h2>
+        <p>Cuando arrastra un icono desde el escritorio, el acceso directo se mueve a <code>Documentos\Bureau Rangé PC\Raccourcis</code>. Un archivo o carpeta real nunca se elimina: después de su confirmación, se mueve a <code>Documentos\Bureau Rangé PC\Fichiers</code>. Nada pasa por la Papelera de reciclaje. Quitar un icono del archivador lo devuelve a su escritorio.</p>
+      </section>
+      <section>
+        <h2>Eliminar sus datos</h2>
+        <p>Desinstale la aplicación desde la Configuración de Windows. Para eliminar también sus cajones y sus copias de seguridad, elimine la carpeta <code>Documentos\Bureau Rangé PC</code>, después de devolver a su escritorio los iconos y archivos que desea conservar.</p>
+      </section>
+      <section>
+        <h2>Niños</h2>
+        <p>La aplicación no recopila ninguna información, tampoco de los niños.</p>
+      </section>
+      <section>
+        <h2>Cambios y preguntas</h2>
+        <p>Si esta política cambia, la nueva versión se publicará en esta página con su fecha de entrada en vigor. Para cualquier pregunta, escriba a <code>microappschoix@hotmail.com</code>.</p>
+        <p>Bureau Rangé PC es una aplicación Maillon, desarrollada en Quebec.<br><a href="index.html#es">← Volver a Bureau Rangé PC</a></p>
+      </section>
+    </article>
+  </main>
+</div>
+
+<script>
+(function () {
+  // Sans script, les trois langues s'affichent l'une sous l'autre.
+  var langues = ["fr", "en", "es"];
+  var tabs = document.querySelector(".onglets");
+  document.documentElement.classList.add("js");
+  tabs.hidden = false;
+
+  function montrer(code) {
+    langues.forEach(function (l) {
+      document.getElementById(l).hidden = l !== code;
+      document.getElementById("t-" + l).setAttribute("aria-selected", l === code ? "true" : "false");
+    });
+  }
+
+  var depart = (location.hash || "").replace("#", "");
+  if (langues.indexOf(depart) < 0) {
+    var nav = (navigator.language || "fr").slice(0, 2).toLowerCase();
+    depart = langues.indexOf(nav) >= 0 ? nav : "en";
+  }
+  montrer(depart);
+
+  langues.forEach(function (l) {
+    document.getElementById("t-" + l).addEventListener("click", function () { montrer(l); });
+  });
+})();
+</script>
+
+</body>
+</html>
