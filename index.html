@@ -86,6 +86,8 @@ button { font: inherit; color: inherit; }
 .fiche-appli strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 .btn { justify-self: start; display: inline-block; text-decoration: none; background: var(--brass); color: var(--sheet); font-weight: 600; padding: .65rem 1.15rem; border-radius: 6px; }
 .btn:hover { filter: brightness(1.08); }
+.btn.vide { background: transparent; color: var(--brass); border: 1px solid var(--brass); }
+.boutons-appli { display: flex; flex-wrap: wrap; gap: .6rem; }
 
 .principes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; margin: 0; }
 @media (max-width: 680px) { .principes { grid-template-columns: minmax(0, 1fr); } }
@@ -150,7 +152,7 @@ button { font: inherit; color: inherit; }
       </div>
       <div class="applis">
         <article class="appli">
-          <span class="etat" data-i="etat1">Bientôt sur le Microsoft Store</span>
+          <span class="etat" data-i="etat1">Offert sur le Microsoft Store</span>
           <h3>Bureau Rangé PC</h3>
           <p data-i="brpc">Range les icônes de votre bureau Windows dans des tiroirs. Un écran propre, et vos raccourcis toujours à un clic. Rien n'est jamais supprimé.</p>
           <ul class="fiche-appli">
@@ -158,7 +160,10 @@ button { font: inherit; color: inherit; }
             <li>Windows 10 · 11</li>
             <li>FR · EN · ES</li>
           </ul>
-          <a class="btn" id="lien-brpc" href="bureau-range-pc/index.html#fr" data-i="decouvrir">Découvrir Bureau Rangé PC</a>
+          <div class="boutons-appli">
+            <a class="btn" href="https://apps.microsoft.com/detail/9NX3KLMTN6B2" target="_blank" rel="noopener" data-i="obtenir">Obtenir sur le Microsoft Store</a>
+            <a class="btn vide" id="lien-brpc" href="bureau-range-pc/index.html#fr" data-i="decouvrir">Découvrir Bureau Rangé PC</a>
+          </div>
         </article>
         <article class="appli avenir">
           <span class="etat" data-i="etat2">En préparation</span>
@@ -208,7 +213,7 @@ button { font: inherit; color: inherit; }
       lead: "Maillon makes simple apps that do one thing, and do it well. Each one is a link in the chain: take only the ones you need, and add more when you need them.",
       maillon2: "Next link", maillon3: "…and then?",
       applisH: "The links",
-      etat1: "Coming soon to the Microsoft Store",
+      etat1: "Available on the Microsoft Store", obtenir: "Get it from the Microsoft Store",
       brpc: "Puts your Windows desktop icons away in drawers. A clean screen, with your shortcuts always one click away. Nothing is ever deleted.",
       achat: "one-time purchase", decouvrir: "Discover Bureau Rangé PC",
       etat2: "In the works", avenirH: "The next link",
@@ -231,7 +236,7 @@ button { font: inherit; color: inherit; }
       lead: "Maillon crea aplicaciones sencillas que hacen una sola cosa, y la hacen bien. Cada una es un eslabón: tome solo los que le sirven y agregue otros cuando los necesite.",
       maillon2: "Próximo eslabón", maillon3: "…¿y después?",
       applisH: "Los eslabones",
-      etat1: "Próximamente en Microsoft Store",
+      etat1: "Disponible en Microsoft Store", obtenir: "Obtener en Microsoft Store",
       brpc: "Guarda los iconos de su escritorio de Windows en cajones. Una pantalla limpia y sus accesos directos siempre a un clic. Nunca se elimina nada.",
       achat: "compra única", decouvrir: "Descubrir Bureau Rangé PC",
       etat2: "En preparación", avenirH: "El próximo eslabón",

@@ -97,6 +97,7 @@ nav button:hover { color: var(--ink); }
 .btn { border-radius: 6px; padding: .7rem 1.2rem; font-weight: 600; cursor: pointer; border: 1px solid var(--folder); }
 .btn.plein { background: var(--folder); color: var(--sheet); }
 .btn.vide { background: transparent; color: var(--folder); }
+a.btn { display: inline-block; text-decoration: none; }
 
 /* Le classeur miniature (la vraie bande de l'appli, interactive) */
 .classeur {
@@ -216,7 +217,7 @@ dialog p { color: #f2f0eb; text-align: center; padding-top: .7rem; max-width: no
   <section class="heros bande">
     <div class="large">
       <div class="texte-heros">
-        <span class="etiquette" data-i="badge">Bientôt sur le Microsoft Store</span>
+        <span class="etiquette" data-i="badge">Offert sur le Microsoft Store</span>
         <h1 data-i="h1">Votre bureau, rangé dans des tiroirs.</h1>
         <p class="lead" data-i="lead">Bureau Rangé PC range les icônes de votre bureau Windows dans un classeur qui se tient discrètement en haut de l'écran. Un écran propre, et vos raccourcis toujours à un clic.</p>
         <ul class="faits">
@@ -225,8 +226,8 @@ dialog p { color: #f2f0eb; text-align: center; padding-top: .7rem; max-width: no
           <li data-i="f3">Français, anglais et espagnol · sans compte, sans publicité</li>
         </ul>
         <div class="boutons">
-          <button type="button" class="btn plein" data-aller="fonctionnement" data-i="cta1">Voir comment ça marche</button>
-          <button type="button" class="btn vide" data-aller="images" data-i="cta2">Voir les captures</button>
+          <a class="btn plein" href="https://apps.microsoft.com/detail/9NX3KLMTN6B2" target="_blank" rel="noopener" data-i="cta0">Obtenir sur le Microsoft Store</a>
+          <button type="button" class="btn vide" data-aller="fonctionnement" data-i="cta1">Voir comment ça marche</button>
         </div>
       </div>
 
@@ -379,13 +380,13 @@ var IMAGES = {"en": {"1": "data:image/webp;base64,UklGRoqDAABXRUJQVlA4IH6DAACQWw
   var T = {
     en: {
       nav1: "How it works", nav2: "Screenshots", nav3: "Safety", nav4: "FAQ",
-      badge: "Coming soon to the Microsoft Store",
+      badge: "Available on the Microsoft Store",
       h1: "Your desktop, put away in drawers.",
       lead: "Bureau Rangé PC tucks your Windows desktop icons into an organizer that sits discreetly at the top of your screen. A clean screen, with your shortcuts always one click away.",
       f1: "<strong>CA$4.99</strong>, one-time purchase, free updates",
       f2: "Windows 10 and 11 (64-bit)",
       f3: "English, French and Spanish · no account, no ads",
-      cta1: "See how it works", cta2: "See the screenshots",
+      cta0: "Get it from the Microsoft Store", cta1: "See how it works", cta2: "See the screenshots",
       d1: "Documents", d2: "Websites", d3: "Games", d4: "Apps",
       i1: "Calculator", i2: "Photos", i3: "Music", i4: "Recipes", i5: "Weather",
       ajout: "+ Add a drawer", mini: "Example: click a drawer to open it.",
@@ -444,13 +445,13 @@ var IMAGES = {"en": {"1": "data:image/webp;base64,UklGRoqDAABXRUJQVlA4IH6DAACQWw
     },
     es: {
       nav1: "Cómo funciona", nav2: "Capturas", nav3: "Seguridad", nav4: "Preguntas",
-      badge: "Próximamente en Microsoft Store",
+      badge: "Disponible en Microsoft Store",
       h1: "Su escritorio, guardado en cajones.",
       lead: "Bureau Rangé PC guarda los iconos de su escritorio de Windows en un archivador que se queda discretamente en la parte superior de la pantalla. Una pantalla limpia y sus accesos directos siempre a un clic.",
       f1: "<strong>4,99 $ CA</strong>, compra única, actualizaciones gratuitas",
       f2: "Windows 10 y 11 (64 bits)",
       f3: "Español, francés e inglés · sin cuenta, sin publicidad",
-      cta1: "Ver cómo funciona", cta2: "Ver las capturas",
+      cta0: "Obtener en Microsoft Store", cta1: "Ver cómo funciona", cta2: "Ver las capturas",
       d1: "Documentos", d2: "Sitios web", d3: "Juegos", d4: "Aplicaciones",
       i1: "Calculadora", i2: "Fotos", i3: "Música", i4: "Recetas", i5: "Tiempo",
       ajout: "+ Agregar un cajón", mini: "Ejemplo: haga clic en un cajón para abrirlo.",
